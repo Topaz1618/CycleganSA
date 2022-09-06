@@ -11,8 +11,8 @@
     Add self-attention mechanism and semantic segmentation
 
 ## CycleGAN with self-attention(Minst)
- <img src='images/1.png' width='600' title='Plasticine, A facial deformation application'>
+ <img src='images/1.png' width='600' title=''>
 
-## h2z with semantic segmentation
- <img src='images/11_real.png' width='600' title='Plasticine, A facial deformation application'>
+## CycleGAN with semantic segmentation(Minst)
+ <img src='images/n02381460_1920_real.png' width='600' title=''>
 
