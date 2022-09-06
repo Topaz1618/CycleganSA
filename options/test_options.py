@@ -20,10 +20,7 @@ class TestOptions(BaseOptions):
         # To avoid cropping, the load_size should be the same as crop_size
         parser.set_defaults(load_size=parser.get_default('crop_size'))
 
-        parser.set_defaults(dataroot='datasets/horse2zebra/testA')
-        parser.set_defaults(name='horse2zebra_pretrained')
-        parser.set_defaults(results_dir='/Users/Topaz/Desktop/images')
-        parser.set_defaults(no_dropout=True)
+
 
         self.isTrain = False
         return parser

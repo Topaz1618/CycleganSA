@@ -238,8 +238,10 @@ class SelfAttention(nn.Module):
         self.query_conv = nn.Conv2d(input_channel, input_channel // 8, 1)
         self.key_conv = nn.Conv2d(input_channel, input_channel // 8, 1)
         self.value_conv = nn.Conv2d(input_channel, input_channel, 1)
-        self.gamma = nn.Parameter(torch.zeros(1))
+
         self.softmax = nn.Softmax(dim=-1)
+        self.gamma = nn.Parameter(torch.zeros(1))
+
 
     def forward(self, x):
         m_batchsize, C, width, height = x.size()

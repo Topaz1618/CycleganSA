@@ -34,7 +34,8 @@ if __name__ == '__main__':
     opt.name = "mnist_cyclegan"
     opt.model = "cycle_gan"
     opt.use_wandb = False
-    opt.gpu_ids = [0, ]     # cpu: -1 GPU: [0, ]
+    # opt.gpu_ids = [0, ]     # cpu: -1 GPU: [0, ]
+    opt.gpu_ids = -1     # cpu: -1 GPU: [0, ]
     opt.display_id = 0
     # opt.epoch_count = 32 # for using pretrain model
 
