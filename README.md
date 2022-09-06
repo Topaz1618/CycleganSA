@@ -11,7 +11,8 @@
     Add self-attention mechanism and semantic segmentation
 
 ## CycleGAN with self-attention
- Generate faster
+ Generate faster than without SA
+
  <img src='images/1.png' width='600' title=''>
 
 ## CycleGAN with semantic segmentation
