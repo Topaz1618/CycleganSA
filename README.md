@@ -36,5 +36,5 @@
 
 
 # Todo
-- [ ] Add How To Run to readme
+- [ ] Add "How To Run?" to readme
 - [ ] Extract CycleGAN code, remove pix2pix
