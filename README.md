@@ -13,17 +13,21 @@
     Add self-attention mechanism and semantic segmentation
 
 ## CycleGAN with self-attention
-   From left to right are the results of original image, CycleGAN, CycleSA. It can be seen that the generation is faster than CycleGAN.
+   It can be seen that the generation is faster than CycleGAN.
 
 <img src='images/1.png' width='600' title=''>
 
-## CycleGAN with semantic segmentation
+(Original image -> CycleGAN output, CycleSA output)
+
+## Semantic segmentation
 
   CycleGAN has an issue with blurred background after style transformation.
   <img src='images/horse2zebra.gif' width='600' title=''>
 
-  It can be seen that the background blur problem has been solved. From left to right is the original image, CycleGAN, CycleSA.
+  The background issue has been solved after added semantic segmentation.
  <img src='images/n02381460_1920_real.png' width='600' title=''>
+
+ (Original image -> CycleGAN output, CycleSA output)
 
 
 # References
