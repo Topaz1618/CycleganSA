@@ -2,10 +2,10 @@ import torch
 import itertools
 from util.image_pool import ImagePool
 from .base_model import BaseModel
-from . import networks
+from . import sa_shallow_networks as networks
 
 
-class CycleGANModel(BaseModel):
+class CycleganSAShallowModel(BaseModel):
     """
     This class implements the CycleGAN model, for learning image-to-image translation without paired data.
 
@@ -80,13 +80,18 @@ class CycleGANModel(BaseModel):
                                             opt.n_layers_D, opt.norm, opt.init_type, opt.init_gain, self.gpu_ids)
             self.netD_B = networks.define_D(opt.input_nc, opt.ndf, opt.netD,
                                             opt.n_layers_D, opt.norm, opt.init_type, opt.init_gain, self.gpu_ids)
-            
+
+#         self.netG_A.load_state_dict(torch.load("checkpoints/mnist_cyclegan_shallow/latest_net_G_A.pth"))
+#         self.netG_B.load_state_dict(torch.load("checkpoints/mnist_cyclegan_shallow/latest_net_G_B.pth"))
+#         self.netD_A.load_state_dict(torch.load("checkpoints/mnist_cyclegan_shallow/latest_net_D_A.pth"))
+#         self.netD_B.load_state_dict(torch.load("checkpoints/mnist_cyclegan_shallow/latest_net_D_B.pth"))
+        
         # For using pre-tained model
         model_mapping = {
-#             "checkpoints/mnist_cyclegan/latest_net_G_A.pth": self.netG_A,
-            "checkpoints/mnist_cyclegan/latest_net_G_B.pth": self.netG_B,
-#             "checkpoints/mnist_cyclegan/latest_net_D_A.pth": self.netD_A,
-            "checkpoints/mnist_cyclegan/latest_net_D_B.pth": self.netD_B
+#             "checkpoints/mnist_cyclegan_shallow/latest_net_G_A.pth": self.netG_A,
+            "checkpoints/mnist_cyclegan_shallow/latest_net_G_B.pth": self.netG_B,
+#             "checkpoints/mnist_cyclegan_shallow/latest_net_D_A.pth": self.netD_A,
+            "checkpoints/mnist_cyclegan_shallow/latest_net_D_B.pth": self.netD_B
         }
         
         for model_name, net_obj in model_mapping.items():
@@ -97,7 +102,9 @@ class CycleGANModel(BaseModel):
             model_dict.update(state_dict)
             net_obj.load_state_dict(model_dict)
 
-        # For using pre-tained model
+        # For using pre-tained model       
+ 
+
             
         if self.isTrain:
             if opt.lambda_identity > 0.0:  # only works when input and output images have the same number of channels
@@ -210,3 +217,4 @@ class CycleGANModel(BaseModel):
         self.backward_D_A()      # calculate gradients for D_A
         self.backward_D_B()      # calculate graidents for D_B
         self.optimizer_D.step()  # update D_A and D_B's weights
+

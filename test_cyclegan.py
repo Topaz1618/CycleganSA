@@ -1,10 +1,8 @@
 import os
-from time import time
 from options.test_options import TestOptions
 from data import create_dataset
 from models import create_model
 from util.visualizer import save_images
-from util.gan_logger import logger
 from util import html
 
 try:
@@ -18,27 +16,30 @@ if __name__ == '__main__':
     # hard-code some parameters for test
     opt.num_threads = 0   # test code only supports num_threads = 0
     opt.batch_size = 1    # test code only supports batch_size = 1
-    opt.use_wandb = False
     opt.serial_batches = True  # disable data shuffling; comment this line if results on randomly chosen images are needed.
     opt.no_flip = True    # no flip; comment this line if results on flipped images are needed.
     opt.no_dropout = True
     opt.display_id = -1   # no visdom display; the test code saves the results to a HTML file.
-    opt.dataroot='datasets/mnist/testA' #  'datasets/mnist/testB'
-    opt.name='mnist_cyclegan' # mnist_cyclegan_deep checkpoint 预处理模型
-    opt.results_dir='output/mnist/tmp' #output/horse2zebra_cyclegan/horse2zebra_cyclegan100
-    opt.direction = 'AtoB' #BtoA
-    opt.no_dropout=True
-#     opt.gpu_ids = [0, ]
-    
+    # opt.set_defaults(model='test')
+    # opt.set_defaults(dataroot='datasets/horse2zebra/testA')
+    # opt.set_defaults(name='horse2zebra_pretrained')
+    # opt.set_defaults(model='test')
+    # opt.set_defaults(results_dir='~/Desktop/images')
+    # opt.set_defaults(no_dropout=True)
+    # opt.model = "test"
+    # opt.dataroot = "datasets/horse2zebra/testA"
+    # opt.name = "horse2zebra_pretrained"
+    # opt.no_dropout = True
+    # opt.results_dir = "~/Desktop/images"
 
     dataset = create_dataset(opt)  # create a dataset given opt.dataset_mode and other options
     model = create_model(opt)      # create a model given opt.model and other options
     model.setup(opt)               # regular setup: load and print networks; create schedulers
 
-#     # initialize logger
-#     if opt.use_wandb:
-#         wandb_run = wandb.init(project='CycleGAN-and-pix2pix', name=opt.name, config=opt) if not wandb.run else wandb.run
-#         wandb_run._label(repo='CycleGAN-and-pix2pix')
+    # initialize logger
+    if opt.use_wandb:
+        wandb_run = wandb.init(project='CycleGAN-and-pix2pix', name=opt.name, config=opt) if not wandb.run else wandb.run
+        wandb_run._label(repo='CycleGAN-and-pix2pix')
 
     # create a website
     web_dir = os.path.join(opt.results_dir, opt.name, '{}_{}'.format(opt.phase, opt.epoch))  # define the website directory
@@ -51,9 +52,6 @@ if __name__ == '__main__':
     # For [CycleGAN]: It should not affect CycleGAN as CycleGAN uses instancenorm without dropout.
     if opt.eval:
         model.eval()
-        
-    start_time = time()
-    time_list = []
     for i, data in enumerate(dataset):
         if i >= opt.num_test:  # only apply our model to opt.num_test images.
             break
@@ -64,12 +62,4 @@ if __name__ == '__main__':
         if i % 5 == 0:  # save images to an HTML file
             print('processing (%04d)-th image... %s' % (i, img_path))
         save_images(webpage, visuals, img_path, aspect_ratio=opt.aspect_ratio, width=opt.display_winsize, use_wandb=opt.use_wandb)
-        cost_time = time() - start_time
-        logger.info(f"{opt.name} Idx: {i} cost time: {cost_time}")
-        start_time = time()
-        if i > 0:
-            time_list.append(cost_time)
-    
-    logger.info(f"{opt.name} {sum(time_list)/len(time_list)}")
-        
     webpage.save()  # save the HTML
