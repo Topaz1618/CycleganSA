@@ -12,19 +12,19 @@ This repository contains the implementation of a CycleGAN model enhanced with se
 
 ## Results
 
-### CycleGAN with Self-Attention
-The addition of the self-attention mechanism shows a significant improvement in generation speed compared to the original CycleGAN.
+### CycleGAN with Self-Attention & Semantic Segmentation
+After adding self-attention and semantic segmentation, the generation speed and quality have significantly improved.
 
 
 ## CycleGAN with self-attention
-   It can be seen that the generation is faster than CycleGAN.
+It can be seen that the generation is faster than CycleGAN.
 
 <img src='images/1.png' width='600' title=''>
 
 (Original image -> CycleGAN output, CycleSA output)
 
 
-## Semantic segmentation
+## CycleGAN with Semantic Segmentation
 
   CycleGAN has an issue with blurred background after style transformation.
   <img src='images/horse2zebra.gif' width='600' title=''>
@@ -34,87 +34,66 @@ The addition of the self-attention mechanism shows a significant improvement in 
 
  (Original image -> CycleGAN output, CycleSA output)
 
-# Environment
-    Python3
-    Pytorch
-    Ubuntu16.04/macOS
-
-
+## Environment
+    - Python3
+    - Pytorch
+    - Ubuntu16.04/macOS
 
 ## Usage
 
-
 ### Training
-
-
-
 To train with a shallow self-attention mechanism:
 
 ```bash
 python train_sa.py --model_type shallow --dataroot datasets/horse2zebra/ --name h2z_sa_shallow
 
-
 python train_sa.py --model_type shallow --dataroot datasets/mnist/ --name mnist_sa_shallow
-
 ```
 
 To train with a deep self-attention mechanism:
-
 ```bash
 python train_sa.py --model_type deep --dataroot datasets/horse2zebra/ --name h2z_sa_deep --gpu 0
 
 python train_sa.py --model_type deep --dataroot datasets/mnist/ --name h2z_sa_deep
-
 ```
 
 To train without self-attention mechanism:
-
 ```bash
 python train_sa.py --dataroot datasets/horse2zebra/ --name h2z_sa_shallow
 
-
 python train_sa.py--dataroot datasets/mnist/ --name mnist_sa_shallow
-
 ```
 
-```
---dataroot: Path to the test images, ensure to select images from domain A or B.
---name: Checkpoint location => checkpoint/{mnist_sa_deep}
---results_dir: Directory to save the results.
---gpu-ids: Default is 0 for GPU, -1 for CPU.
---direction: Specify the direction of transformation, either AtoB or BtoA.
+### Training Parameters
+--dataroot: Path to the dataset
+--name: Specific checkpoint location. (will be saved in checkpoint/{name})
+--results_dir: Directory to save the results
+--gpu-ids: IDs of GPUs to use, default is 0 for GPU, -1 for CPU
 --model_type:
-    shallow: Self-attention in shallow CycleGAN.
-    deep: Self-attention in deep CycleGAN.
-    default: Original CycleGAN.
-
-```
+    shallow: Use self-attention in shallow CycleGAN
+    deep: Use self-attention in deep CycleGAN
+    default: Use the original CycleGAN
 
 
-
-
-
-
-# Results
-    Add self-attention mechanism and semantic segmentation
-
-
-
-
+### Testing
+```bash
  python test.py --gpu_ids -1
  python test.py --dataroot datasets/mnist/testA --name mnist_sa_deep --results_dir output/mnist/sa_shallow --direction AtoB
- --dataroot 测试图片路径，注意选择 A 域或者 B 域图片
- --name mnist_sa_deep  checkpoint位置 => checkpoint/{mnist_sa_deep}
- -- results_dir 结果保存位置
- --direction AtoB or BtoA
+```
 
+### Testing Parameters
+--dataroot: Path to the test images, ensure to select images from domain A or B
+--name: Specific checkpoint model location. (will be fetched from checkpoint/{name})
+--results_dir: Directory to save the results
+--gpu-ids: IDs of GPUs to use, default is 0 for GPU, -1 for CPU
+--direction: Specify the direction of the transformation, AtoB or BtoA
 
 
 ## Dataset
 -- datasets
-    dataset_name
-        A 域
-        B 域
+    └── dataset_name
+        ├── domain_A
+        └── domain_B
 
 
 ## Publication
