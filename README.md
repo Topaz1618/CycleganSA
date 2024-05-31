@@ -65,14 +65,14 @@ python train_sa.py--dataroot datasets/mnist/ --name mnist_sa_shallow
 ```
 
 ### Training Parameters
---dataroot: Path to the dataset
---name: Specific checkpoint location. (will be saved in checkpoint/{name})
---results_dir: Directory to save the results
---gpu-ids: IDs of GPUs to use, default is 0 for GPU, -1 for CPU
---model_type:
-    shallow: Use self-attention in shallow CycleGAN
-    deep: Use self-attention in deep CycleGAN
-    default: Use the original CycleGAN
+- `--dataroot`: Path to the dataset
+- `--name`: Specific checkpoint location. (will be saved in checkpoint/{name})
+- `--results_dir`: Directory to save the results
+- `--gpu-ids`: IDs of GPUs to use, default is 0 for GPU, -1 for CPU
+- `--model_type`:
+-     shallow: Use self-attention in shallow CycleGAN
+-     deep: Use self-attention in deep CycleGAN
+-     default: Use the original CycleGAN
 
 
 ### Testing
@@ -82,11 +82,11 @@ python train_sa.py--dataroot datasets/mnist/ --name mnist_sa_shallow
 ```
 
 ### Testing Parameters
---dataroot: Path to the test images, ensure to select images from domain A or B
---name: Specific checkpoint model location. (will be fetched from checkpoint/{name})
---results_dir: Directory to save the results
---gpu-ids: IDs of GPUs to use, default is 0 for GPU, -1 for CPU
---direction: Specify the direction of the transformation, AtoB or BtoA
+- `--dataroot`: Path to the test images, ensure to select images from domain A or B
+- `--name`: Specific checkpoint model location. (will be fetched from checkpoint/{name})
+- `--results_dir`: Directory to save the results
+- `--gpu-ids`: IDs of GPUs to use, default is 0 for GPU, -1 for CPU
+- `--direction`: Specify the direction of the transformation, AtoB or BtoA
 
 
 ## Dataset
