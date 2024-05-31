@@ -35,11 +35,24 @@ It can be seen that the generation is faster than CycleGAN.
  (Original image -> CycleGAN output, CycleSA output)
 
 ## Environment
-    - Python3
-    - Pytorch
-    - Ubuntu16.04/macOS
+- Ubuntu18.04
+- Python 3.8
+- CUDA 11.3
+- cuDNN 8, NVCC
+- Pytorch 1.11.0
+- torchvision 0.12.0
+- torchaudio 0.11.0
+
 
 ## Usage
+
+### Dataset Structure
+```bash
+-- datasets
+    └── dataset_name
+        ├── domain_A
+        └── domain_B
+```
 
 ### Training
 To train with a shallow self-attention mechanism:
@@ -88,14 +101,6 @@ python train_sa.py--dataroot datasets/mnist/ --name mnist_sa_shallow
 - `--gpu-ids`: IDs of GPUs to use, default is 0 for GPU, -1 for CPU
 - `--direction`: Specify the direction of the transformation, AtoB or BtoA
 
-
-## Dataset Structure
-```bash
--- datasets
-    └── dataset_name
-        ├── domain_A
-        └── domain_B
-```
 
 ## Publication
 My paper has been published by IEEE. You can access it here [A New CycleGAN-Based Style Transfer Method](https://ieeexplore.ieee.org/document/10361163).
