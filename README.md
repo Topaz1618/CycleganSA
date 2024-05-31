@@ -52,23 +52,23 @@ The generation process is significantly faster compared to the original CycleGAN
 To train with a shallow self-attention mechanism:
 
 ```bash
-python train_sa.py --model_type shallow --dataroot datasets/horse2zebra/ --name h2z_sa_shallow
+python train.py --model_type shallow --dataroot datasets/horse2zebra/ --name h2z_sa_shallow
 
-python train_sa.py --model_type shallow --dataroot datasets/mnist/ --name mnist_sa_shallow
+python train.py --model_type shallow --dataroot datasets/mnist/ --name mnist_sa_shallow
 ```
 
 To train with a deep self-attention mechanism:
 ```bash
-python train_sa.py --model_type deep --dataroot datasets/horse2zebra/ --name h2z_sa_deep --gpu 0
+python train.py --model_type deep --dataroot datasets/horse2zebra/ --name h2z_sa_deep --gpu 0
 
-python train_sa.py --model_type deep --dataroot datasets/mnist/ --name h2z_sa_deep
+python train.py --model_type deep --dataroot datasets/mnist/ --name h2z_sa_deep
 ```
 
 To train without self-attention mechanism:
 ```bash
-python train_sa.py --dataroot datasets/horse2zebra/ --name h2z_sa_shallow
+python train.py --dataroot datasets/horse2zebra/ --name h2z_sa_shallow
 
-python train_sa.py--dataroot datasets/mnist/ --name mnist_sa_shallow
+python train.py--dataroot datasets/mnist/ --name mnist_sa_shallow
 ```
 
 ### Training Parameters
