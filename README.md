@@ -57,7 +57,7 @@ The generation process is significantly faster compared to the original CycleGAN
 ```
 
 ### Training
-#### Command
+
 
 To train with a shallow self-attention mechanism:
 
@@ -93,7 +93,7 @@ python train.py--dataroot datasets/mnist/ --name mnist_sa_shallow
 
 
 ### Testing
-#### Command
+
 ```bash
  python test.py --dataroot datasets/mnist/testA --name mnist_sa_deep --results_dir output/mnist/sa_shallow --direction AtoB
 ```
