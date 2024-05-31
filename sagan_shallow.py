@@ -46,7 +46,7 @@ def create_model(opt):
     print("what's the model", opt.model)
 
     # model = find_model_using_name(opt.model)
-    model = find_model_using_name("my")
+    model = find_model_using_name("cyclegansa_shallow")
     instance = model(opt)
     print("model [%s] was created" % type(instance).__name__)
     return instance
@@ -55,19 +55,22 @@ def create_model(opt):
 if __name__ == '__main__':
     # python train.py --dataroot ./datasets/maps --name maps_cyclegan --model cycle_gan --gpu_ids -1
     opt = TrainOptions().parse()   # get training options
-    opt.dataroot = "datasets/mnist/"
-    opt.name = "mnist_cyclegan_shallow"
-    opt.model = "cycle_gan"
+    opt.dataroot = "datasets/mnist/"   # dataset path: /datasets/mnist datasets/horse2zebra
+    opt.name = "minst_cyclegan_shallow"  # For generate save_dir
+    opt.model = "cycle_gan"                    # cycle_gan, my, mydeep
     opt.use_wandb = False
     opt.display_id = 0
-    opt.gpu_ids = [0, ] # GPU: [0, ]    CPU: -1
-    # opt.epoch_count = 17 # pretrained start epoch
+    opt.gpu_ids = [0, ]
+    opt.epoch_count = 60 # pretrained start epoch
 
     dataset = create_dataset(opt)  # create a dataset given opt.dataset_mode and other options
     dataset_size = len(dataset)    # get the number of images in the dataset.
     print('The number of training images = %d' % dataset_size)
     #
     model = create_model(opt)      # create a model given opt.model and other options
+
+    
+    
     model.setup(opt)               # regular setup: load and print networks; create schedulers
     visualizer = Visualizer(opt)   # create a visualizer that display/save images and plots
     total_iters = 0                # the total number of training iterations

@@ -45,7 +45,7 @@ def create_model(opt):
     print("what's the model", opt.model)
 
     # model = find_model_using_name(opt.model)
-    model = find_model_using_name("mydeep")
+    model = find_model_using_name("cyclegansa_deep")
     instance = model(opt)
     print("model [%s] was created" % type(instance).__name__)
     return instance
@@ -54,14 +54,14 @@ def create_model(opt):
 if __name__ == '__main__':
     # python train.py --dataroot ./datasets/maps --name maps_cyclegan --model cycle_gan --gpu_ids -1
     opt = TrainOptions().parse()   # get training options
-    opt.dataroot = "datasets/mnist/"  # dataset path
-    opt.name = "mnist_cyclegan_deep"    # For generate save_dir
+    opt.dataroot = "datasets/mnist/"
+    opt.name = "mnist_cyclegan_deep"
     opt.model = "cycle_gan"
     opt.use_wandb = False
     opt.gpu_ids = [0, ]
     opt.display_id = 0
 #     opt.batch_size = 1
-    opt.epoch_count = 17            # pretrained start epoch
+    opt.epoch_count = 55 # pretrained start epoch
 
     dataset = create_dataset(opt)  # create a dataset given opt.dataset_mode and other options
     dataset_size = len(dataset)    # get the number of images in the dataset.
