@@ -38,7 +38,7 @@
 
 ## Publication
 
-My paper has been published by IEEE. You can access it [here](https://ieeexplore.ieee.org/document/10361163).
+My paper has been published by IEEE. You can access it here [A New CycleGAN-Based Style Transfer Method](https://ieeexplore.ieee.org/document/10361163).
 
 
 
