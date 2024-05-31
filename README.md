@@ -15,8 +15,6 @@ The generation process is significantly faster compared to the original CycleGAN
 <span style="color: #6c757d;">[Left to Right: Original Image, CycleGAN Output, CycleganSA Output]</span>
 
 
-####
-
 
 ### CycleGAN with Semantic Segmentation
 
