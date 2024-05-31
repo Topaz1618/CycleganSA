@@ -25,7 +25,7 @@ The generation process is significantly faster compared to the original CycleGAN
 
   <img src='images/horse2zebra.gif' width='600' title=''>
 
-  [Left to Right: Original Image, CycleGAN Output, CycleGANSA Output]
+  [Left to Right: Original Image, CycleGAN Output]
 
 #### CycleganSA Result
   The background issue has been solved after added semantic segmentation.
@@ -57,7 +57,9 @@ The generation process is significantly faster compared to the original CycleGAN
 ```
 
 ### Training
-#### To train with a shallow self-attention mechanism:
+#### Command
+
+To train with a shallow self-attention mechanism:
 
 ```bash
 python train.py --model_type shallow --dataroot datasets/horse2zebra/ --name h2z_sa_shallow
@@ -65,14 +67,14 @@ python train.py --model_type shallow --dataroot datasets/horse2zebra/ --name h2z
 python train.py --model_type shallow --dataroot datasets/mnist/ --name mnist_sa_shallow
 ```
 
-#### To train with a deep self-attention mechanism:
+To train with a deep self-attention mechanism:
 ```bash
 python train.py --model_type deep --dataroot datasets/horse2zebra/ --name h2z_sa_deep --gpu 0
 
 python train.py --model_type deep --dataroot datasets/mnist/ --name h2z_sa_deep
 ```
 
-#### To train without self-attention mechanism:
+To train without self-attention mechanism:
 ```bash
 python train.py --dataroot datasets/horse2zebra/ --name h2z_sa_shallow
 
