@@ -112,5 +112,10 @@ python train.py--dataroot datasets/mnist/ --name mnist_sa_shallow
 
 
 
+# Copyright and License
+CycleganSA is licensed under the [BSD License](LICENSE) License. Refer to the LICENSE file for more information.
 
+
+
+Please feel free to ask any questions or provide suggestions. Thank you for using and contributing to CycleganSA!
 
