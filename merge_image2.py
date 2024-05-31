@@ -18,7 +18,6 @@ def concat_handler():
         name_pattern[-1] = "res.png"
         res_name = os.path.join(input_path, "_".join(name_pattern))
 
-
         if not os.path.exists(real_name):
             print(real_name)
 

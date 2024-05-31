@@ -35,6 +35,13 @@
   - [pytorch-CycleGAN-and-pix2pix](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix)
 
 
+
+## Publication
+
+My paper has been published by IEEE. You can access it [here](https://ieeexplore.ieee.org/document/10361163).
+
+
+
 # Todo
 - [ ] Add "How To Run?" to readme
 - [ ] Extract CycleGAN code, remove pix2pix
