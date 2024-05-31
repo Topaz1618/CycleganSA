@@ -12,7 +12,7 @@ The generation process is significantly faster compared to the original CycleGAN
 
 <img src='images/1.png' width='600' title=''>
 
-Left to Right: Original Image, CycleGAN Output, CycleganSA Output
+[Left to Right: Original Image, CycleGAN Output, CycleganSA Output]
 
 
 ### CycleGAN with Semantic Segmentation
@@ -23,7 +23,7 @@ Left to Right: Original Image, CycleGAN Output, CycleganSA Output
   The background issue has been solved after added semantic segmentation.
  <img src='images/n02381460_1920_real.png' width='600' title=''>
 
-Left to Right: Original Image, CycleGAN Output, CycleganSA Output
+[Left to Right: Original Image, CycleGAN Output, CycleganSA Output]
 
 
 ## Environment
