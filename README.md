@@ -1,36 +1,32 @@
-# CycleGAN with Self-Attention and Semantic Segmentation
-
-
 
 ## Introduction
-This repository contains the implementation of a CycleGAN model enhanced with self-attention mechanism and semantic segmentation for improved style transfer results. It includes experiments on the MNIST and horse2zebra (h2z) datasets. The enhancements lead to faster generation times and address the issue of blurred backgrounds in the transformed images.
-
-
-
-
+CycleganSA is an improved version of the CycleGAN model.
+It includes a self-attention mechanism and semantic segmentation to speed up generation times and fix blurred backgrounds in transformed images.
+It has been tested on the MNIST and horse2zebra (h2z) datasets.
+This work has been published by IEEE and can be accessed [here](https://ieeexplore.ieee.org/document/10361163).
 
 
 ## Results
 After adding self-attention and semantic segmentation, the generation speed and quality have significantly improved.
 
-
 ### CycleGAN with self-attention
-It can be seen that the generation is faster than CycleGAN.
+The generation process is significantly faster compared to the original CycleGAN.
 
 <img src='images/1.png' width='600' title=''>
 
-(Original image -> CycleGAN output, CycleSA output)
+Left to Right: Original Image, CycleGAN Output, CycleganSA Output
 
 
 ### CycleGAN with Semantic Segmentation
 
-  CycleGAN has an issue with blurred background after style transformation.
+  The original CycleGAN often has an issue with a blurred background after style transformation
   <img src='images/horse2zebra.gif' width='600' title=''>
 
   The background issue has been solved after added semantic segmentation.
  <img src='images/n02381460_1920_real.png' width='600' title=''>
 
- (Original image -> CycleGAN output, CycleSA output)
+Left to Right: Original Image, CycleGAN Output, CycleganSA Output
+
 
 ## Environment
 - Ubuntu18.04
@@ -99,9 +95,6 @@ python train_sa.py--dataroot datasets/mnist/ --name mnist_sa_shallow
 - `--gpu-ids`: IDs of GPUs to use, default is 0 for GPU, -1 for CPU
 - `--direction`: Specify the direction of the transformation, AtoB or BtoA
 
-
-## Publication
-My paper has been published by IEEE. You can access it here [A New CycleGAN-Based Style Transfer Method](https://ieeexplore.ieee.org/document/10361163).
 
 
 # References
