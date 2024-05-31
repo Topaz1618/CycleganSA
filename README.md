@@ -1,8 +1,6 @@
 
 ## Introduction
-CycleganSA is an improved version of the CycleGAN model.
-It includes a self-attention mechanism and semantic segmentation to speed up generation times and fix blurred backgrounds in transformed images.
-It has been tested on the MNIST and horse2zebra (h2z) datasets.
+CycleGANSA is an improved version of the CycleGAN model. It includes a self-attention mechanism and semantic segmentation to speed up generation times and fix blurred backgrounds in transformed images. It has been tested on the MNIST and horse2zebra (h2z) datasets.
 This work has been published by IEEE and can be accessed [here](https://ieeexplore.ieee.org/document/10361163).
 
 
