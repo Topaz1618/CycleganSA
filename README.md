@@ -79,7 +79,7 @@ python train.py --dataroot datasets/horse2zebra/ --name h2z_sa_shallow
 python train.py--dataroot datasets/mnist/ --name mnist_sa_shallow
 ```
 
-### Training Parameters
+#### Training Parameters
 - `--dataroot`: Path to the dataset
 - `--name`: Specific checkpoint location. (will be saved in checkpoint/{name})
 - `--results_dir`: Directory to save the results
@@ -96,7 +96,7 @@ python train.py--dataroot datasets/mnist/ --name mnist_sa_shallow
  python test.py --dataroot datasets/mnist/testA --name mnist_sa_deep --results_dir output/mnist/sa_shallow --direction AtoB
 ```
 
-### Testing Parameters
+#### Testing Parameters
 - `--dataroot`: Path to the test images, ensure to select images from domain A or B
 - `--name`: Specific checkpoint model location. (will be fetched from checkpoint/{name})
 - `--results_dir`: Directory to save the results
