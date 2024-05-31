@@ -105,17 +105,18 @@ python train.py--dataroot datasets/mnist/ --name mnist_sa_shallow
 - `--gpu-ids`: IDs of GPUs to use, default is 0 for GPU, -1 for CPU
 - `--direction`: Specify the direction of the transformation, AtoB or BtoA
 
+## Acknowledgements & References
+This project is based on the CycleGAN model. We acknowledge the authors of the original CycleGAN paper:
+
+- Zhu, Jun-Yan, Taesung Park, Phillip Isola, and Alexei A. Efros. "Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks." In Proceedings of the IEEE International Conference on Computer Vision (ICCV), 2017.
+
+Link to the original paper: [CycleGAN Paper](https://arxiv.org/abs/1703.10593)
+
+Original CycleGAN code: [pytorch-CycleGAN-and-pix2pix](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix)
 
 
-# References
-  - [pytorch-CycleGAN-and-pix2pix](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix)
-
-
-
-## Copyright and License
+# Copyright and License
 CycleganSA is licensed under the [BSD License](LICENSE) License. Refer to the LICENSE file for more information.
-
-
 
 Please feel free to ask any questions or provide suggestions. Thank you for using and contributing to CycleganSA!
 
