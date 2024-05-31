@@ -70,9 +70,9 @@ python train_sa.py--dataroot datasets/mnist/ --name mnist_sa_shallow
 - `--results_dir`: Directory to save the results
 - `--gpu-ids`: IDs of GPUs to use, default is 0 for GPU, -1 for CPU
 - `--model_type`: shallow | deep | default
-       - shallow: Use self-attention in shallow CycleGAN
-       - deep: Use self-attention in deep CycleGAN
-       - default: Use the original CycleGAN
+    - `shallow`: Use self-attention in shallow CycleGAN
+    - `deep`: Use self-attention in deep CycleGAN
+    - `default`: Use the original CycleGAN
 
 
 ### Testing
