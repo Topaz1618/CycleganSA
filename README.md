@@ -21,16 +21,18 @@ The generation process is significantly faster compared to the original CycleGAN
 ### CycleGAN with Semantic Segmentation
 
 #### CycleGAN Result
-  The original CycleGAN has an issue with a blurred background after style transformation
+  The original CycleGAN has an issue with a blurred background after style transformation.
+
   <img src='images/horse2zebra.gif' width='600' title=''>
 
-<span style="color: #6c757d;">[Left to Right: Original Image, CycleGAN Output, CycleGANSA Output]</span>
+  [Left to Right: Original Image, CycleGAN Output, CycleGANSA Output]
 
 #### CycleganSA Result
   The background issue has been solved after added semantic segmentation.
+
  <img src='images/n02381460_1920_real.png' width='600' title=''>
 
- <span style="color: #6c757d;">[Left to Right: Original Image, CycleGAN Output, CycleganSA Output]</span>
+ [Left to Right: Original Image, CycleGAN Output, CycleganSA Output]
 
 <!--  <img src='images/img_1.png' width='600' title=''> -->
 
