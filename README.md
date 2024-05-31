@@ -11,12 +11,10 @@ This repository contains the implementation of a CycleGAN model enhanced with se
 
 
 ## Results
-
-### CycleGAN with Self-Attention & Semantic Segmentation
 After adding self-attention and semantic segmentation, the generation speed and quality have significantly improved.
 
 
-## CycleGAN with self-attention
+### CycleGAN with self-attention
 It can be seen that the generation is faster than CycleGAN.
 
 <img src='images/1.png' width='600' title=''>
@@ -24,7 +22,7 @@ It can be seen that the generation is faster than CycleGAN.
 (Original image -> CycleGAN output, CycleSA output)
 
 
-## CycleGAN with Semantic Segmentation
+### CycleGAN with Semantic Segmentation
 
   CycleGAN has an issue with blurred background after style transformation.
   <img src='images/horse2zebra.gif' width='600' title=''>
