@@ -24,7 +24,7 @@ The generation process is significantly faster compared to the original CycleGAN
 
   The background issue has been solved after added semantic segmentation.
  <img src='images/n02381460_1920_real.png' width='600' title=''>
-  <img src='images/img.png' width='600' title=''>
+<!--   <img src='images/img.png' width='600' title=''> -->
    <img src='images/img_1.png' width='600' title=''>
 
 
